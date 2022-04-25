@@ -1,0 +1,107 @@
+---
+import Layout from '../components/Layout.astro';
+---
+
+<Layout title="Hello galaxy!">
+	<main>
+		<h1>Let's explore <strong>Astro!</strong></h1>
+		<p class="getting-started-instructions">Get started by editing <code>src/pages/index.astro</code></p>
+		<div class="link-card-grid">
+		<a class="link-card" href="https://astro.build/integrations/">
+			<h2>Integrations &rarr;</h2>
+			<p>Add component frameworks, Tailwind, Partytown, and more!</p>
+		</a>
+		<a class="link-card" href="https://astro.build/chat/">
+			<h2>Themes &rarr;</h2>
+			<p>Explore a galaxy of community-built starters.</p>
+		</a>
+		<a class="link-card" href="https://astro.build/chat/">
+			<h2>Docs &rarr;</h2>
+			<p>Learn our complete feature set and explore the API.</p>
+		</a>
+		<a class="link-card" href="https://astro.build/chat">
+			<h2>Chat &rarr;</h2>
+			<p>Ask, contribute, and have fun on our community discord &#9825;</p>
+		</a>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	:root {
+		--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+		--font-size-lg: clamp(1.2rem, 1vw + 1.2rem, 1.5rem); 
+		--border-color: rgba(224, 199, 191, 0.3);
+	}
+
+	h1 {
+		font-size: var(--font-size-xl);
+	}
+
+	h2 {
+		font-size: var(--font-size-lg);
+		margin: 0;
+	}
+
+	strong {
+		color: #c852b2;
+	}
+
+	code {
+		border: 2px solid var(--border-color);
+		border-radius: 5px;
+		padding: 0.75rem;
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+
+	main {
+		margin: auto;
+		max-width: 60ch;
+	}
+
+	.getting-started-instructions {
+		line-height: 2;
+		margin-bottom: 2rem;
+	}
+
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+
+	.link-card {
+		display: inline-block;
+		line-height: 1.4;
+		text-decoration: none;
+		color: var(--text-color);
+		background: linear-gradient(45deg, #215EFE, #DA62C4 30%, var(--border-color) 60%);
+		background-size: 400%;
+		background-position: 100%;
+		padding: 1em 1.3em;
+		border-radius: 0.5rem;
+		transition: background-position 0.3s;
+	}
+
+	.link-card, .link-card * {
+		position: relative;
+	}
+
+	.link-card::before {
+		content: '';
+		position: absolute;
+		inset: 0.15rem;
+		border-radius: 0.35rem;
+		background: var(--color-bg);
+		transition: opacity 0.3s;
+	}
+
+	.link-card:hover {
+		background-position: 0;
+	}
+
+	.link-card:hover::before {
+		opacity: 0.9;
+	}
+</style>
