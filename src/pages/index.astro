@@ -30,7 +30,7 @@ import Layout from '../components/Layout.astro';
 <style>
 	:root {
 		--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-		--font-size-lg: clamp(1.2rem, 1vw + 1.2rem, 1.5rem); 
+		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem); 
 		--border-color: rgba(224, 199, 191, 0.3);
 	}
 
@@ -67,8 +67,14 @@ import Layout from '../components/Layout.astro';
 
 	.link-card-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
 		gap: 1rem;
+	}
+
+	@media(min-width: 60ch) {
+		.link-card-grid {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 
 	.link-card {
