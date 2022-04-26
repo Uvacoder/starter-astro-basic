@@ -29,24 +29,31 @@ import Layout from '../components/Layout.astro';
 
 <style>
 	:root {
-		--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem); 
-		--border-color: hsl(17, 24%, 90%);
+		--color-border: hsl(17, 24%, 90%);
+		--astro-gradient: linear-gradient(0deg,#4F39FA, #DA62C4);
+		--link-gradient: linear-gradient(45deg, #4F39FA, #DA62C4 30%, var(--color-border) 60%);
 		--night-sky-gradient: linear-gradient(0deg, #392362 -33%, #431f69 10%, #30216b 50%, #1f1638 100%);
 	}
 
-	h1 {
-		font-size: var(--font-size-xl);
+	h2 {
+		margin: 0;
 	}
 
-	h2 {
-		font-size: var(--font-size-lg);
-		margin: 0;
+	code {
+		border: 2px solid var(--color-border);
+		border-radius: 5px;
+		padding: 0.2em 0.5em;
+	}
+
+	main {
+		margin: auto;
+    padding: 1em;
+		max-width: 60ch;
 	}
 
 	.astro-text {
 		color: white;
-		background: linear-gradient(0deg,#4F39FA, #D75EA9);
+		background: var(--astro-gradient);
 		background-size: 100% 200%;
 		background-position-y: 100%;
 		padding: 0 0.2em;
@@ -56,24 +63,11 @@ import Layout from '../components/Layout.astro';
 
 	@keyframes pulse {
 		0%, 100% {
-			background-position-y: 40%;
+			background-position-y: 20%;
 		}
 		50% {
 			background-position-y: 100%;
 		}
-	}
-
-	code {
-		border: 2px solid var(--border-color);
-		border-radius: 5px;
-		padding: 0.2em 0.5em;
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-
-	main {
-		margin: auto;
-		max-width: 60ch;
 	}
 
 	.getting-started-instructions {
@@ -98,15 +92,14 @@ import Layout from '../components/Layout.astro';
 	}
 
 	.link-card {
-		display: inline-block;
 		line-height: 1.4;
 		text-decoration: none;
 		color: var(--text-color);
-		background: linear-gradient(45deg, #215EFE, #DA62C4 30%, var(--border-color) 60%);
+		background-image: var(--link-gradient);
 		background-size: 400%;
-		background-position: 100%;
 		padding: 1em 1.3em;
 		border-radius: 0.5rem;
+		background-position: 100%;
 		transition: background-position 0.5s;
 	}
 
@@ -114,16 +107,16 @@ import Layout from '../components/Layout.astro';
 		position: relative;
 	}
 
+	.link-card:hover {
+		background-position: 0;
+	}
+
 	.link-card::before {
 		content: '';
 		position: absolute;
 		inset: 0.15rem;
 		border-radius: 0.35rem;
-		background: white;
+		background-color: white;
 		opacity: 0.8;
-	}
-
-	.link-card:hover {
-		background-position: 0;
 	}
 </style>
