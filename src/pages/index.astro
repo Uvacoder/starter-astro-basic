@@ -31,7 +31,7 @@ import Layout from '../components/Layout.astro';
 	:root {
 		--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
 		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem); 
-		--border-color: hsla(15, 28%, 78%, 0.3);
+		--border-color: hsl(17, 24%, 90%);
 		--night-sky-gradient: linear-gradient(0deg, #392362 -33%, #431f69 10%, #30216b 50%, #1f1638 100%);
 	}
 
@@ -45,7 +45,22 @@ import Layout from '../components/Layout.astro';
 	}
 
 	.astro-text {
-		color: #30216b;
+		color: white;
+		background: linear-gradient(0deg,#4F39FA, #D75EA9);
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		padding: 0 0.2em;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%, 100% {
+			background-position-y: 40%;
+		}
+		50% {
+			background-position-y: 100%;
+		}
 	}
 
 	code {
@@ -104,7 +119,7 @@ import Layout from '../components/Layout.astro';
 		position: absolute;
 		inset: 0.15rem;
 		border-radius: 0.35rem;
-		background: var(--color-bg);
+		background: white;
 		opacity: 0.8;
 	}
 
